@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BriefForm from "./BriefForm/BriefForm";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
 
 import logo from './logo.svg';
 import './App.css';
@@ -34,17 +42,34 @@ class App extends Component {
   simpleAction = (event) => {
     this.props.simpleAction();
   }
-  
+
   render() {
 
     return (
-      <div className="App">
- 
-        <ListBrief />
-        <BriefForm/>
+     <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/BriefForm">BriefForm</Link>
+          </li>
+          <li>
+            <Link to="/ListBrief">ListBrief</Link>
+          </li>
+        </ul>
+
+        <Switch>
+          <Route path="/BriefForm">
+          <BriefForm />
+          </Route>
+          <Route path="/ListBrief">
+          <ListBrief />
+          </Route>
+          
+        </Switch>
       </div>
-    );
-  }
+    </Router>
+  );
+}
 }
 
 export default App;

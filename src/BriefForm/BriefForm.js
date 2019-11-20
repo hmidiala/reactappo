@@ -64,11 +64,7 @@ class BriefForm extends React.Component {
         errors: errors
       });
       return formIsValid;
-
-
     }
-
-
 
   render() {
     return (
@@ -91,8 +87,6 @@ class BriefForm extends React.Component {
       );
   }
 
-
 }
-
 
 export default BriefForm;

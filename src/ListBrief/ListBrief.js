@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css';
 
 class ListBrief extends React.Component {
 
@@ -21,14 +22,14 @@ componentDidMount() {
     render() {
   
       return (
-        <div Class="container">
-          <h2> ListBrief : Get Data From "facebook.github.io/react-native/movies.json" </h2>
+        <div>
+          <h2> I Get Data From "facebook.github.io/react-native/movies.json" </h2>
           { 
             this.state.data.map((dynamicData,key) =>
-            <table>
-             <td>  {dynamicData.title}  : </td>
-             <td>  {dynamicData.releaseYear} </td>
-            </table>
+            <div class="center-div">
+            <h4> {dynamicData.title}  : </h4>  
+              <h5>{dynamicData.releaseYear}</h5> 
+            </div>
             )
           }
         </div>
